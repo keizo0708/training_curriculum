@@ -18,7 +18,7 @@ class CalendarsController < ApplicationController
     params.require(:plan).permit(:date, :plan)
   end
 
-  def get_Week
+  def get_week
 
     wdays = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)']
 
@@ -37,8 +37,7 @@ class CalendarsController < ApplicationController
       end
 
 
-      wday_num = Date.today.wday
-      wday_num = wday_num + x
+      wday_num = Date.today.wday + x
       if wday_num >= 7
         wday_num = wday_num -7
       end
